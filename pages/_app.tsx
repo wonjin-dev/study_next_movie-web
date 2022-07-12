@@ -4,7 +4,7 @@ import Layout from "../components/Layout";
 const App = ({ Component, pageProps }: AppProps) => {
   return (
     <Layout>
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </Layout>
   );
 };

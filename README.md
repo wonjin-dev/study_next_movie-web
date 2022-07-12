@@ -89,8 +89,19 @@
 
 > useParam()이 필요한 경우에는 파일 명에 []를 붙이면 된다
 
+> spread operator 가능
+
 ```
 /pages/movies/[id].tsx => /movies/:id
+/pages/moveis/[...id].tsx => /movies/:{any param}
 ```
 
 > 해당 param은 useRouter()를 이용하여 router.query에서 찾을 수 있다
+
+```
+router.push({
+  pathname: {URL},
+  query: {...params}, // 네비게이션과 동시에 컴포넌트 보내고 싶은 데이터
+  {URL} // `as`기능: 유저에게 보여주고 싶은 URL (보내는 데이터 암호화 가능)
+})
+```
