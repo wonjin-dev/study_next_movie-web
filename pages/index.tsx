@@ -1,4 +1,8 @@
-import { NextPage } from "next";
+import {
+  GetServerSideProps,
+  InferGetServerSidePropsType,
+  NextPage,
+} from "next";
 import Seo from "../components/Seo";
 
 export type IMovie = {
@@ -8,7 +12,7 @@ export type IMovie = {
 };
 
 interface Props {
-  results: IMovie[];
+  results: InferGetServerSidePropsType<GetServerSideProps>;
 }
 
 const Landing: NextPage<Props> = (props) => {
