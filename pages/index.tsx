@@ -1,9 +1,10 @@
 import { NextPage } from "next";
+import Seo from "../components/Seo";
 
 const Landing: NextPage = () => {
   return (
     <>
-      <>Hello, World !</>
+      <Seo title="Home" />
     </>
   );
 };
