@@ -77,3 +77,20 @@
 > 2. 해당 페이지의 컴포넌트 arg로 넘겨주면 된다
 >    \_app에서 `<Componment {...pageProps}>`를 작성했기 때문에 ..!
 >    SSR을 통해 API가 완료되면 loading 화면 없이 보여줄지, loading 화면을 먼저 보여준 후에 화면을 보여줄지 선택해야 한다
+
+## Routing
+
+> pages 폴더 안에 폴더를 생성함으로서 middleware 를 생성할 수 있다 (만약 middleware 명과 일치하는 도메인이 필요할 경우 index.tsx로 해결 가능)
+
+```
+/pages/movies/index.tsx => ~/movies
+/pages/movies/11 => ~/movies/11
+```
+
+> useParam()이 필요한 경우에는 파일 명에 []를 붙이면 된다
+
+```
+/pages/movies/[id].tsx => /movies/:id
+```
+
+> 해당 param은 useRouter()를 이용하여 router.query에서 찾을 수 있다
