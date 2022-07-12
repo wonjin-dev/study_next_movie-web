@@ -1,6 +1,5 @@
 import { NextPage } from "next";
 import Seo from "../components/Seo";
-import { useEffect, useState } from "react";
 
 export type IMovie = {
   id: number;
@@ -9,24 +8,15 @@ export type IMovie = {
 };
 
 interface Props {
-  data: IMovie[];
+  results: IMovie[];
 }
 
 const Landing: NextPage<Props> = (props) => {
-  const [movies, setMovies] = useState<IMovie[]>();
-
-  useEffect(() => {
-    (async () => {
-      const { results } = await (await fetch(`/api/movies`)).json();
-      setMovies(results);
-    })();
-  }, []);
-
   return (
-    <>
+    <div className="container">
       <Seo title="Home" />
-      {!movies && <h4>Loading...</h4>}
-      {movies?.map((movie: IMovie) => (
+
+      {props.results.map((movie: IMovie) => (
         <div className="movie" key={movie.id}>
           <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} />
           <h4>{movie.original_title}</h4>
@@ -53,8 +43,20 @@ const Landing: NextPage<Props> = (props) => {
           text-align: center;
         }
       `}</style>
-    </>
+    </div>
   );
 };
 
 export default Landing;
+
+export async function getServerSideProps() {
+  const { results } = await (
+    await fetch(`http://localhost:3000/api/movies`)
+  ).json();
+
+  return {
+    props: {
+      results,
+    },
+  };
+}

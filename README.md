@@ -68,3 +68,12 @@
     ];
   },
 ```
+
+## getServerSideProps
+
+> 1. 함수를 export 해야한다 (이름은 getServerSideProps 고정)
+>    이 안에서 작성된 코드는 서버사이드에서 작동함 (key값 암호화 등 여러가지 서버사이드 특징)
+>    props라는 객체를 반드시 리턴해야 함
+> 2. 해당 페이지의 컴포넌트 arg로 넘겨주면 된다
+>    \_app에서 `<Componment {...pageProps}>`를 작성했기 때문에 ..!
+>    SSR을 통해 API가 완료되면 loading 화면 없이 보여줄지, loading 화면을 먼저 보여준 후에 화면을 보여줄지 선택해야 한다
