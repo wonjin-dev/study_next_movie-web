@@ -1,9 +1,13 @@
 # 학습목표
 
-- [ ] 서버 사이드 렌더링 (SSR) 그리고 Static Generation을 이해
+- [x] 서버 사이드 렌더링 (SSR) 그리고 Static Generation을 이해
 - [x] NextJS 입문
   - [x] 사용 이유<br>
     > 앱에 있는 페이지들을 미리 렌더 한다. 즉, CSR처럼 js로서 모든 것을 그린 후에 노출시키는 것이 아닌, 인터넷 연결 속도에 상관없이 미리 DOM을 그린 후에 자바스크립트를 패치한다 (hydration)
+
+# 추가 기능
+
+- [x] TypeScript 적용
 
 <hr>
 
@@ -38,3 +42,7 @@
 > 프로젝트 전반의 청사진 적용 페이지
 > `Component`와 `pageProps` 두개의 arg를 필수로 받는다
 > 즉, 프로젝트 전반에 사용되는 공통 컴포넌트 (Router, GlobalStlyes, ...)
+
+**_baseUrl을 통해 public폴더의 assets을 제어할 수 있다_**
+
+**_Next에서는 <img>태그를 사용하지 않는 것을 권장한다. 해당 강의에서는 안 알려주니 따로 공부할 것 .._**
