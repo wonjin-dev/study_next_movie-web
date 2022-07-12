@@ -46,3 +46,25 @@
 **_baseUrl을 통해 public폴더의 assets을 제어할 수 있다_**
 
 **_Next에서는 <img>태그를 사용하지 않는 것을 권장한다. 해당 강의에서는 안 알려주니 따로 공부할 것 .._**
+
+## next.config.js
+
+- redirect 기능 지원
+- rewrite 기능도 지원 (url은 변하지 않지만 유저가 보는 화면은 변함) => API-key 암호화 가능
+
+```
+  redirects() {
+    return [
+      {
+        source: "/old-blog/:path*", //! 유저 입력 주소
+        destination: "/new-sexy-blog/:path*", //! 실제 도착 주소
+        permanent: false, //! 클라이언트/검색 엔진에 리디렉션을 영구적으로 캐시하도록 지시 (http-status: 308(true) || 307(false))
+      },
+      {
+        source: "/old-blog/:path*",
+        destination: "/new-sexy-blog/:path*",
+        permanent: false,
+      },
+    ];
+  },
+```
