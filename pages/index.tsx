@@ -1,12 +1,11 @@
 import { NextPage } from "next";
-import NavBar from "../components/NavBar";
 
-const Home: NextPage = () => {
+const Landing: NextPage = () => {
   return (
     <>
-      <NavBar />
+      <>Hello, World !</>
     </>
   );
 };
 
-export default Home;
+export default Landing;
